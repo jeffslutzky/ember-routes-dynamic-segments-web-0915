@@ -25,7 +25,7 @@ describe('Acceptance: SeeAllArtists', function() {
     server.createList('artist', 10);
     visit('/');
     // create link that goes to '/artists' with a class of all-artists
-    click('.all-artists');
+    click('.all-artists a');
 
     andThen(function() {
       // put each artist in an element with class of artist
@@ -37,7 +37,7 @@ describe('Acceptance: SeeAllArtists', function() {
     // make a single artist
     let artist = server.create('artist', {first_name: "Steven", last_name: "Nunez"});
     visit('/');
-    click('.all-artists');
+    click('.all-artists a');
 
     andThen(function(){
       let $artist = $('.artist a').first();

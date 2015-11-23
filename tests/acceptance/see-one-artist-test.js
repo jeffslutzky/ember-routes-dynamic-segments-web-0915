@@ -23,7 +23,7 @@ describe('Acceptance: SeeOneArtist', function() {
   it('can see the details of an artist', function() {
     server.create('artist', {first_name: "Steven", last_name: "Nunez"});
     visit('/');
-    click('.all-artists');
+    click('.all-artists a');
     // click the first artist
     click('.artist a:first');
 
@@ -35,7 +35,7 @@ describe('Acceptance: SeeOneArtist', function() {
   it('can see the details of an artist', function() {
     server.create('artist', {first_name: "Steven", last_name: "Nunez", genre: "Pop"});
     visit('/');
-    click('.all-artists');
+    click('.all-artists a');
     click('.artist a:first');
 
     andThen(function() {
